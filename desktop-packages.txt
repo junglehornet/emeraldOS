@@ -1,0 +1,74 @@
+# Hyprland and Wayland
+hyprland
+xorg-xwayland
+xdg-desktop-portal
+xdg-desktop-portal-hyprland
+xdg-desktop-portal-gtk
+mesa
+qt6-wayland
+
+# Login and authentication
+greetd
+greetd-tuigreet
+polkit
+hyprpolkitagent
+gnome-keyring
+
+# Desktop interface
+waybar
+fuzzel
+mako
+hyprpaper
+hyprlock
+hypridle
+wl-clipboard
+cliphist
+grim
+slurp
+wf-recorder
+brightnessctl
+
+# Audio
+pipewire
+pipewire-pulse
+pipewire-alsa
+pipewire-jack
+wireplumber
+pavucontrol
+playerctl
+
+# Networking and devices
+networkmanager
+network-manager-applet
+bluez
+bluez-utils
+blueman
+upower
+power-profiles-daemon
+udisks2
+udiskie
+gvfs
+
+# Applications
+kitty
+thunar
+thunar-volman
+tumbler
+firefox
+neovim
+helix
+file-roller
+imv
+zathura
+zathura-pdf-mupdf
+mpv
+
+# Appearance
+noto-fonts
+noto-fonts-emoji
+noto-fonts-cjk
+ttf-jetbrains-mono-nerd
+papirus-icon-theme
+adw-gtk-theme
+nwg-look
+qt6ct
