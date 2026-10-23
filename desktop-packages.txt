@@ -7,6 +7,11 @@ openssh
 nano
 vim
 
+# Shell and prompt
+fish
+starship
+fastfetch
+
 # Hyprland and Wayland
 hyprland
 xorg-xwayland
@@ -15,6 +20,21 @@ xdg-desktop-portal-hyprland
 xdg-desktop-portal-gtk
 mesa
 qt6-wayland
+
+# Graphics support for moving the installation between PCs
+linux-firmware
+intel-ucode
+amd-ucode
+nvidia-open
+nvidia-utils
+nvidia-settings
+vulkan-intel
+vulkan-radeon
+intel-media-driver
+lib32-mesa
+lib32-nvidia-utils
+lib32-vulkan-intel
+lib32-vulkan-radeon
 
 # Login and authentication
 # greetd
@@ -75,6 +95,7 @@ zathura-pdf-mupdf
 mpv
 imagemagick
 dos2unix
+tree
 
 # Appearance
 noto-fonts

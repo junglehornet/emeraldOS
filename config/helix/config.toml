@@ -1,0 +1,15 @@
+theme = "jetbrains_dark"
+
+[editor]
+true-color = true
+idle-timeout = 0
+completion-timeout = 0
+
+[editor.lsp]
+auto-signature-help = false
+
+[editor.cursor-shape]
+insert = "bar"
+
+[keys.insert]
+C-space = "signature_help"

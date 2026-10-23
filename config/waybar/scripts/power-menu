@@ -1,0 +1,13 @@
+#!/bin/sh
+# Fuzzel inherits the desktop's dark/emerald theme. Escape cancels.
+choice=$(printf '%s\n' 'Cancel' 'Lock' 'Suspend' 'Log out' 'Reboot' 'Shut down' |
+    fuzzel --dmenu --index --prompt='Power ❯ ' --lines=6 --width=24) || exit 0
+
+case "$choice" in
+    1) pidof hyprlock >/dev/null || exec hyprlock ;;
+    2) exec systemctl suspend ;;
+    3) exec hyprctl dispatch 'hl.dsp.exit()' ;;
+    4) exec systemctl reboot ;;
+    5) exec systemctl poweroff ;;
+    *) exit 0 ;;
+esac

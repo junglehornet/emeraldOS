@@ -1,0 +1,15 @@
+/* Shared emerald accents; retain native widget layout and accessibility. */
+@define-color accent_color #50d890;
+@define-color accent_bg_color #287b4b;
+@define-color accent_fg_color #ffffff;
+@define-color theme_selected_bg_color #287b4b;
+@define-color theme_selected_fg_color #ffffff;
+@define-color window_bg_color #0e1512;
+@define-color window_fg_color #dce8e0;
+@define-color view_bg_color #111916;
+@define-color view_fg_color #dce8e0;
+@define-color headerbar_bg_color #1b2921;
+@define-color headerbar_fg_color #dce8e0;
+@define-color card_bg_color #1b2921;
+@define-color dialog_bg_color #18231d;
+selection { background-color: #287b4b; color: #ffffff; }

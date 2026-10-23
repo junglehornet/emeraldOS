@@ -1,0 +1,13 @@
+[[language]]
+name = "c"
+indent = { tab-width = 4, unit = " " }
+
+# [[language]]
+# name = "html"
+# formatter = { command = "prettier", args = ["--parser", "html"] }
+# language-servers = [ "vscode-html-language-server" ]
+# auto-format = true
+
+# [language-server.vscode-html-language-server.config.html.format]
+# contentUnformatted = [ "pre", "code"]
+

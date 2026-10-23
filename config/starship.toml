@@ -1,0 +1,280 @@
+format = """
+
+[─](fg:current_line)\
+$os\
+$username\
+${env_var.ZMX_SESSION}\
+$directory\
+$vcs\
+$fill\
+$nodejs\
+$rust\
+$golang\
+$python\
+$zig\
+$status\
+$cmd_duration\
+$shell\
+$time\
+$line_break\
+$character\
+"""
+
+# format = """
+
+# [─](fg:current_line)\
+# $os\
+# ${env_var.ZMX_SESSION}\
+# $directory\
+# ${custom.jj}\
+# $git_branch\
+# $git_status\
+# $git_state\
+# $fill\
+# $nodejs\
+# $rust\
+# $golang\
+# $python\
+# $zig\
+# $status\
+# $cmd_duration\
+# $shell\
+# $line_break\
+# $character\
+# """
+
+continuation_prompt = """[:::](bright-black) """
+
+palette = 'tokyo_night'
+add_newline = false
+
+[palettes.dracula]
+foreground = '#F8F8F2'
+background = '#282A36'
+current_line = '#44475A'
+primary = '#1E1F29'
+box = '#44475A'
+blue = '#6272A4'
+cyan = '#8BE9FD'
+green = '#50FA7B'
+orange = '#FFB86C'
+pink = '#FF79C6'
+purple = '#BD93F9'
+red = '#FF5555'
+yellow = '#F1FA8C'
+golang_blue = '#79D4FD'
+python_yellow = '#FFDB4E'
+zig_yellow = "#F7A41D"
+jujutsu_blue = "#2F9FDF"
+
+[palettes.tokyo_night]
+foreground = '#F8F8F2'
+# background = '#282A36'
+current_line = '#383B4B'
+primary = '#1E1F29'
+box = '#383B4B'
+# box = '#44475A'
+pink = '#FF79C6'
+orange = '#FFB86C'
+golang_blue = '#79D4FD'
+python_yellow = '#FFDB4E'
+zig_yellow = "#F7A41D"
+jujutsu_blue = "#2F9FDF"
+
+[os]
+format = '(fg:current_line)[](fg:box)[$symbol ](fg:foreground bg:box)[](fg:box)'
+disabled = false
+
+[os.symbols]
+Alpine = ''
+Amazon = ''
+Android = ''
+Arch = ''
+CentOS = ''
+Debian = ''
+EndeavourOS = ''
+Fedora = ''
+FreeBSD = ''
+Garuda = ''
+Gentoo = ''
+Linux = ''
+Macos = ''
+Manjaro = ''
+Mariner = ''
+Mint = ''
+NetBSD = ''
+NixOS = ''
+OpenBSD = ''
+OpenCloudOS = ''
+openEuler = ''
+openSUSE = ''
+OracleLinux = '⊂⊃'
+Pop = ''
+Raspbian = ''
+Redhat = ''
+RedHatEnterprise = ''
+Solus = ''
+SUSE = ''
+Ubuntu = ''
+Unknown = ''
+Windows = ''
+
+[directory]
+format = '[─](fg:current_line)[](fg:pink)[󰷏 ](fg:primary bg:pink)[](fg:pink bg:box)[ $read_only$truncation_symbol$path](fg:foreground bg:box)[](fg:box)'
+# home_symbol = "  ~/"
+# truncation_symbol = '  '
+# truncation_length = 2
+# read_only = '󱧵 '
+# read_only_style = ''
+# truncation_length = 3
+# truncation_symbol = "…/"
+fish_style_pwd_dir_length = 3
+
+[vcs]
+order = ["jj", "git"]
+git_modules = "$git_branch$git_status$git_state"
+jj_modules = "[─](fg:current_line)[](fg:jujutsu_blue)[ ](fg:primary bg:jujutsu_blue)[](fg:jujutsu_blue bg:box)[ $jj_bookmark$jj_change$jj_status](fg:foreground bg:box)[](fg:box)"
+
+[git_branch]
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $branch](fg:foreground bg:box)'
+# symbol = ' '
+symbol = ' '
+
+[git_status]
+# format = '[( $all_status)](fg:foreground bg:box)[](fg:box)'
+format = '[( ($conflicted$deleted$renamed$modified$staged$untracked$ahead_behind))](fg:foreground bg:box)[](fg:box)'
+ahead = "↗${count}"
+diverged = "↙${ahead_count}↗${behind_count}"
+behind = "↙${count}"
+conflicted = "!${count}"
+deleted = "✘${count}"
+renamed = "→${count}"
+modified = "*${count}"
+staged = "+${count}"
+untracked = "?${count}"
+
+[jj_bookmark]
+format = "[$bookmark(@$remote)$diverged( \\(+$overflow_count others\\))]($style) "
+style = "bold fg:foreground bg:box"
+
+[jj_metrics]
+format = "( [+$added]($added_style))( [-$deleted]($deleted_style))"
+
+[jj_change]
+format = "[$change_prefix](bold purple bg:box)[$change_suffix]($suffix_style)"
+suffix_style = "dimmed bg:box"
+
+[jj_status]
+format = "( [$description$added$copied$deleted$modified$renamed]($style))( [$conflicted$hidden$immutable]($style))"
+conflicted = " \\(CONFLICT\\)"
+hidden = " \\(HIDDEN\\)"
+immutable = " \\(IMMUTABLE\\)"
+style = "foreground bold bg:box"
+
+[custom.git]
+# command = "starship module git_branch; starship module git_status; starship module git_state;"
+command = "starship module git_branch"
+shell = ["fish", "-N", "-c"]
+# command = "echo egan"
+# detect_folders = ['.git','!.jj']
+use_stdin = false
+format = "$output"
+when = true
+style = ''
+
+[nodejs]
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+detect_files = ["package.json", ".node-version", "!bunfig.toml", "!bun.lockb"]
+
+[bun]
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = '🥟'
+
+[deno]
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:boxc)'
+symbol = '🦕'
+
+[aws]
+format = '[─](fg:current_line)[](fg:purple)[$symbol ](fg:primary bg:purple)[](fg:purple bg:box)[ $profile](fg:foreground bg:box)[](fg:box)'
+symbol = '☁️'
+
+[rust]
+format = '[─](fg:current_line)[](fg:red)[$symbol ](fg:primary bg:red)[](fg:red bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = "󱘗"
+# style = "bg:#212736"
+# format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[golang]
+format = '[─](fg:current_line)[](fg:golang_blue)[$symbol](fg:primary bg:golang_blue)[](fg:golang_blue bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = " "
+style = "bg:#212736"
+# format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[python]
+format = '[─](fg:current_line)[](fg:python_yellow)[$symbol ](fg:primary bg:python_yellow)[](fg:python_yellow bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = "󰌠"
+
+[zig]
+format = '[─](fg:current_line)[](fg:zig_yellow)[$symbol ](fg:primary bg:zig_yellow)[](fg:zig_yellow bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = ""
+
+[custom.jj]
+# command = "prompt"
+# format = "$output"
+command = "starship-jj --ignore-working-copy starship prompt | ansi strip"
+shell = ["nu", "-c"]
+use_stdin = false
+# when = true
+format = '[─](fg:current_line)[](fg:jujutsu_blue)[$symbol](fg:primary bg:jujutsu_blue)[](fg:jujutsu_blue bg:box)[ $output](fg:foreground bg:box)[](fg:box)'
+symbol = ' '
+when = 'jj --ignore-working-copy root'
+# detect_folders = ['.jj']
+# symbol = 'jj '
+
+
+[fill]
+symbol = '─'
+style = 'fg:current_line'
+
+[status]
+format = "[─](fg:current_line)[](fg:red)[ ](fg:primary bg:red)[](fg:red bg:box)[ $status](fg:foreground bg:box)[](fg:box)"
+pipestatus = true
+pipestatus_separator = "-"
+pipestatus_segment_format = "$status"
+pipestatus_format = "[─](fg:current_line)[](fg:red)[ ](fg:primary bg:red)[](fg:red bg:box)[ $pipestatus](bg:box)[](fg:box)"
+disabled = false
+
+[cmd_duration]
+min_time = 500
+format = '[─](fg:current_line)[](fg:orange)[ ](fg:primary bg:orange)[](fg:orange bg:box)[ $duration ](fg:foreground bg:box)[](fg:box)'
+
+[shell]
+format = '[─](fg:current_line)[](fg:blue)[ ](fg:primary bg:blue)[](fg:blue bg:box)[ $indicator](fg:foreground bg:box)[](fg:box)'
+disabled = false
+
+[time]
+format = '[─](fg:current_line)[](fg:purple)[󰦖 ](fg:primary bg:purple)[](fg:purple bg:box)[ $time](fg:foreground bg:box)[](fg:box)'
+time_format = '%H:%M'
+disabled = false
+
+[username]
+format = '[─](fg:current_line)[](fg:yellow)[ ](fg:primary bg:yellow)[](fg:yellow bg:box)[ $user](fg:foreground bg:box)[](fg:box) '
+show_always = true
+
+[env_var.ZMX_SESSION]
+symbol = " "
+description = "zmx session name"
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $env_value](fg:foreground bg:box)[](fg:box)'
+
+[character]
+# format = """
+# [│](fg:current_line)
+# [╰─$symbol](fg:current_line) """
+format = """
+[$symbol](fg:current_line) """
+# success_symbol = '[](fg:bold green)'
+# error_symbol = '[](fg:bold red)'
+
+[profiles]
+# transient = """[──❯](fg:current_line) """
+transient = """❯ """

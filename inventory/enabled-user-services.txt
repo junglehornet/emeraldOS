@@ -1,0 +1,7 @@
+/etc/systemd/user/graphical-session-pre.target.wants/xdg-user-dirs.service: /usr/lib/systemd/user/xdg-user-dirs.service
+/etc/systemd/user/pipewire-session-manager.service: /usr/lib/systemd/user/wireplumber.service
+/etc/systemd/user/pipewire.service.wants/wireplumber.service: /usr/lib/systemd/user/wireplumber.service
+/etc/systemd/user/sockets.target.wants/gnome-keyring-daemon.socket: /usr/lib/systemd/user/gnome-keyring-daemon.socket
+/etc/systemd/user/sockets.target.wants/p11-kit-server.socket: /usr/lib/systemd/user/p11-kit-server.socket
+/etc/systemd/user/sockets.target.wants/pipewire-pulse.socket: /usr/lib/systemd/user/pipewire-pulse.socket
+/etc/systemd/user/sockets.target.wants/pipewire.socket: /usr/lib/systemd/user/pipewire.socket

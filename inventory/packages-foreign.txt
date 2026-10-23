@@ -1,0 +1,4 @@
+1password
+ttf-ms-fonts
+yay
+yay-debug

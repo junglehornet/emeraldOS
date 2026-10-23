@@ -1,0 +1,87 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 36,
+  "margin-top": 8,
+  "margin-left": 12,
+  "margin-right": 12,
+  "spacing": 4,
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "cpu",
+    "memory",
+    "battery",
+    "tray",
+    "custom/lock",
+    "custom/power"
+  ],
+  "custom/launcher": {
+    "format": "\udb82\udcc7",
+    "tooltip-format": "Open applications",
+    "on-click": "fuzzel"
+  },
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "all-outputs": false
+  },
+  "hyprland/window": {
+    "max-length": 32,
+    "separate-outputs": true
+  },
+  "clock": {
+    "format": "{:%a %d %b  \u00b7  %H:%M}",
+    "tooltip-format": "<tt>{calendar}</tt>"
+  },
+  "pulseaudio": {
+    "format": "VOL {volume}%",
+    "format-muted": "MUTED",
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "scroll-step": 5
+  },
+  "network": {
+    "format-wifi": "Wi-Fi {signalStrength}%",
+    "format-ethernet": "LAN",
+    "format-disconnected": "Offline",
+    "tooltip-format": "{ifname}: {ipaddr}",
+    "on-click": "nm-connection-editor"
+  },
+  "cpu": {
+    "format": "CPU {usage}%",
+    "interval": 5
+  },
+  "memory": {
+    "format": "RAM {percentage}%",
+    "interval": 5
+  },
+  "battery": {
+    "states": {
+      "warning": 25,
+      "critical": 10
+    },
+    "format": "BAT {capacity}%",
+    "format-charging": "CHG {capacity}%"
+  },
+  "tray": {
+    "spacing": 12
+  },
+  "custom/lock": {
+    "format": "\udb80\udf3e",
+    "tooltip-format": "Lock screen",
+    "on-click": "pidof hyprlock || hyprlock"
+  },
+  "custom/power": {
+    "format": " ",
+    "tooltip-format": "Power menu",
+    "on-click": "~/.config/waybar/scripts/power-menu"
+  }
+}
