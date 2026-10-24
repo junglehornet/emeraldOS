@@ -97,6 +97,7 @@ imagemagick
 dos2unix
 tree
 btop
+fzf
 
 # Appearance
 noto-fonts
