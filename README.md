@@ -159,14 +159,6 @@ enabled. Set the timezone using the value in `inventory/timezone.txt`.
 The desktop's `hypr/scripts/apply-theme` publishes its GNOME interface settings;
 the binary dconf database is deliberately excluded.
 
-## Exclusions
+## Hyprland Default Configuration
+MohaLinux comes with the following keyboard shortcuts configured in hyprland:
 
-The configuration allowlist in `.gitignore` excludes browser and Discord
-profiles, login sessions, PulseAudio cookies, binary dconf state, and unrelated
-application data. Previously copied Discord data, PulseAudio cookies, binary
-dconf state, and Qt file-dialog history have been removed from this directory.
-SSH/GPG keys, password stores,
-network credentials, histories, caches, machine IDs, account databases, and
-filesystem UUIDs are not included. Boot partition contents require privileged
-access and are not captured by this snapshot. This repository is configuration
-and restore guidance, not a full disk backup.

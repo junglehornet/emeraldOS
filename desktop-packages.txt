@@ -96,6 +96,7 @@ mpv
 imagemagick
 dos2unix
 tree
+btop
 
 # Appearance
 noto-fonts
