@@ -15,6 +15,7 @@ Moha Linux comes with some handy apps and tools preinstalled including but not l
 - Thunar File Explorer
 - Various settings apps for Bluetooth, audio, network, etc.
 - Steam
+- JetBrains Toolbox
 - Btop
 - Helix
 - Neovim
