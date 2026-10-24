@@ -6,7 +6,7 @@
 -- APPLICATIONS
 -------------------------
 
-local terminal = "kitty"
+local terminal = "kitty --start-as minimized"
 local launcher = "fuzzel"
 local fileManager = "thunar"
 local browser = "firefox"
@@ -142,6 +142,12 @@ hl.bind(mod .. " + V",
 hl.bind(mod .. " + F",
     hl.dsp.window.fullscreen({
         mode = "fullscreen",
+        action = "toggle",
+    }))
+
+hl.bind(mod .. " + M",
+    hl.dsp.window.fullscreen({
+        mode = "maximized",
         action = "toggle",
     }))
 
