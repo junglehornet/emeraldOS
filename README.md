@@ -108,8 +108,9 @@ through `arch-chroot` into the new installation before any package installation
 or desktop provisioning begins. The provisioning stage verifies that `/` matches
 the target filesystem recorded by the staging plugin and refuses to run elsewhere.
 Foreign packages use yay as an
-unprivileged build user. `yay-debug` comes from the yay build rather than being
-requested as a separate AUR package. Missing or renamed packages stop installation
+unprivileged build user. If yay is missing, the installer uses `yay-bin` to install
+the precompiled binary without compiling yay or installing Go. The recorded `yay`
+and `yay-debug` packages are excluded from subsequent AUR targets. Missing or renamed packages stop installation
 with an error. AUR builds can take substantial time and require internet access.
 
 The desktop, Emerald SDDM theme, branding, NVIDIA settings and recorded system

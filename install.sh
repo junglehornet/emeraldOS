@@ -243,15 +243,15 @@ as_builder() {
     (cd -- "$aur_build_dir" && runuser -u "$build_user" -- env HOME="$aur_build_dir" TMPDIR="$aur_build_dir" "$@")
 }
 
-# Bootstrap yay only when it is missing, then let it resolve AUR dependencies.
+# Bootstrap yay from the precompiled binary package when it is missing.
 if ! command -v yay > /dev/null 2>&1; then
-    as_builder git clone -- https://aur.archlinux.org/yay.git "$aur_build_dir/yay"
-    as_builder bash -c 'cd -- "$HOME/yay" && makepkg -si --needed --noconfirm'
+    as_builder git clone -- https://aur.archlinux.org/yay-bin.git "$aur_build_dir/yay-bin"
+    as_builder bash -c 'cd -- "$HOME/yay-bin" && makepkg -si --needed --noconfirm'
 fi
 
 aur_targets=()
 for package in "${aur_packages[@]}"; do
-    [[ $package == yay || $package == yay-debug ]] || aur_targets+=("$package")
+    [[ $package == yay || $package == yay-debug || $package == yay-bin ]] || aur_targets+=("$package")
 done
 if (( ${#aur_targets[@]} )); then
     as_builder yay -S --needed --noconfirm --answerclean None --answerdiff None "${aur_targets[@]}"
