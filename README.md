@@ -26,6 +26,11 @@ current system or install Moha linux and arch onto a new system.
 
 ## Install a new system
 
+**Disclaimer: The installation script is still in beta and was written with assistance 
+by artificial intelligence. As the script has not been fully verified as safe by a human,
+it may have dangerous bugs that could cause system  damage, so exercise caution when 
+running the script.**
+
 Run `sudo ./install.sh` to choose between setting up the current Arch system
 and installing a new system on another drive.
 
