@@ -12,10 +12,21 @@ current system or install Moha linux and arch onto a new system.
 Moha Linux comes with some handy apps and tools preinstalled including but not limited to:
 - Kitty
 - Firefox
+- Thunar File Explorer
+- Various settings apps for Bluetooth, audio, network, etc.
 - Steam
 - Btop
 - Helix
 - Neovim
+- Nano
+- Fish shell
+- Starship
+- Fastfetch
+- Many other standard linux terminal utilities
+
+These apps and others are preinstalled to make Moha Linux a fully-functional 
+graphical OS out of the box, requiring no extra configuration for a beautiful, 
+functional desktop environment.
 
 # Repo File Structure
 
