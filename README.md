@@ -186,7 +186,9 @@ The desktop's `hypr/scripts/apply-theme` publishes its GNOME interface settings;
 the binary dconf database is deliberately excluded.
 
 ## Hyprland Default Configuration
-MohaLinux comes with the following keyboard shortcuts configured in hyprland:
+MohaLinux comes with the following keybinds configured in hyprland:
+| Keybind | Action |
+| --- | --- |
 | Super + Enter            | Open Kitty |
 | Super + D                | Application launcher |
 | Super + E                | File manager |
