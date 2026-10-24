@@ -9,6 +9,14 @@ an existing Arch system (such as an Arch installer ISO or a full Arch system)
 to either install all of the configuration files that Moha includes into your
 current system or install Moha linux and arch onto a new system.
 
+Moha Linux comes with some handy apps and tools preinstalled including but not limited to:
+- Kitty
+- Firefox
+- Steam
+- Btop
+- Helix
+- Neovim
+
 # Repo File Structure
 
 - `config/` maps to `~/.config/`: Hyprland, monitor rules, wallpapers, Waybar,
