@@ -57,7 +57,6 @@ nvidia-open
 nvidia-settings
 nvidia-utils
 nwg-look
-openai-codex
 openssh
 papirus-icon-theme
 pavucontrol
