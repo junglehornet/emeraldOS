@@ -178,6 +178,9 @@ hl.bind(mod .. " + mouse:273",
     hl.dsp.window.resize(),
     { mouse = true })
 
+-- Play/Pause button
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+
 -------------------------
 -- SCREENSHOTS
 -------------------------
