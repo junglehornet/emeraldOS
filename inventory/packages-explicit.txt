@@ -1,4 +1,3 @@
-1password
 adw-gtk-theme
 base
 base-devel

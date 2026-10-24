@@ -121,7 +121,7 @@ if [[ $mode == --full ]]; then
     # Credentials and their parent directory are already private. System files
     # created by archinstall must be readable by users such as pacman's alpm.
     umask 022
-    # Stage files through a host-side hook; custom commands then run in the target.
+    # Stage files through a host-side hook before provisioning the target.
     archinstall --silent --dry-run --config "$setup_dir/config.json" --creds "$setup_dir/creds.json" \
         --plugin "$script_dir/scripts/archinstall-stage.py" --mountpoint /mnt </dev/null
     if [[ $layout != 3 ]]; then
@@ -131,12 +131,15 @@ if [[ $mode == --full ]]; then
     # udev's probes instead of racing them after the partition table changes.
     LOCK_BLOCK_DEVICE=1 archinstall --silent --config "$setup_dir/config.json" --creds "$setup_dir/creds.json" \
         --plugin "$script_dir/scripts/archinstall-stage.py" --mountpoint /mnt </dev/null
+    # Run directly so provisioning output streams to the caller instead of
+    # being captured by archinstall's custom-command runner.
+    arch-chroot -S /mnt bash /opt/mohaLinux/install.sh --provision "$login" </dev/null
     echo 'Installation finished. Review archinstall output before rebooting.'
     exit 0
 fi
 
 if [[ $mode == --provision ]]; then
-    # Archinstall runs this stage via arch-chroot. Refuse to provision its host.
+    # Run this stage via arch-chroot. Refuse to provision its host.
     [[ -r $script_dir/.target-root ]] || die 'Provisioning must run inside the new installation via arch-chroot.'
     [[ $(cat "$script_dir/.target-root") == "$(stat -Lc '%d:%i' /)" ]] || die 'Provisioning is not chrooted into the staged target filesystem.'
     # arch-chroot -S supplies a fresh /tmp whose default mode can be 0755.

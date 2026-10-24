@@ -64,8 +64,6 @@ def configuration(env, uefi):
         'profile_config': {'profile': {'main': 'Minimal'}},
         'swap': {'enabled': True, 'algorithm': 'zstd'},
         'packages': [], 'services': [],
-        # Archinstall runs these commands through arch-chroot into its target.
-        'custom_commands': [f'bash /opt/mohaLinux/install.sh --provision {login}'],
     }
     user = {'username': login, 'enc_password': env['MOHA_HASH'], 'sudo': True, 'groups': ['wheel']}
     return config, {'users': [user], '!users': [user]}
