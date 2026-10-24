@@ -187,4 +187,18 @@ the binary dconf database is deliberately excluded.
 
 ## Hyprland Default Configuration
 MohaLinux comes with the following keyboard shortcuts configured in hyprland:
-
+| Super + Enter            | Open Kitty |
+| Super + D                | Application launcher |
+| Super + E                | File manager |
+| Super + B                | Firefox |
+| Super + Q                | Close window |
+| Super + F                | Toggle fullscreen |
+| Super + V                | Toggle floating |
+| Super + Arrow keys       | Focus adjacent window |
+| Super + 1–0              | Switch workspaces |
+| Super + Shift + 1–0      | Move window to workspace |
+| Super + Left mouse drag  | Move window |
+| Super + Right mouse drag | Resize window |
+| Super + L                | Lock desktop |
+| Super + Shift + E        | Exit Hyprland |
+| Print Screen             | Select screenshot region |
