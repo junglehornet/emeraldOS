@@ -204,3 +204,4 @@ MohaLinux comes with the following keybinds configured in hyprland:
 | Super + L                | Lock desktop |
 | Super + Shift + E        | Exit Hyprland |
 | Print Screen             | Select screenshot region |
+| Play/Pause Key           | Play/Pause Media (using playerctl) |
