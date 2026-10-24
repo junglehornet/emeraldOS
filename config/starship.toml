@@ -3,6 +3,7 @@ format = """
 [─](fg:current_line)\
 $os\
 $username\
+$hostname\
 ${env_var.ZMX_SESSION}\
 $directory\
 $vcs\
@@ -258,8 +259,12 @@ time_format = '%H:%M'
 disabled = false
 
 [username]
-format = '[─](fg:current_line)[](fg:yellow)[ ](fg:primary bg:yellow)[](fg:yellow bg:box)[ $user](fg:foreground bg:box)[](fg:box) '
+format = '[─](fg:current_line)[](fg:yellow)[ ](fg:primary bg:yellow)[](fg:yellow bg:box)[ $user](fg:foreground bg:box)[](fg:box)'
 show_always = true
+
+[hostname]
+format = '[─](fg:current_line)[](fg:green)[󰟀 ](fg:primary bg:green)[](fg:green bg:box)[ $hostname](fg:foreground bg:box)[](fg:box)'
+ssh_only = false
 
 [env_var.ZMX_SESSION]
 symbol = " "
