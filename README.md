@@ -195,6 +195,7 @@ MohaLinux comes with the following keybinds configured in hyprland:
 | Super + B                | Firefox |
 | Super + Q                | Close window |
 | Super + F                | Toggle fullscreen |
+| Super + M                | Toggle maximized |
 | Super + V                | Toggle floating |
 | Super + Arrow keys       | Focus adjacent window |
 | Super + 1–0              | Switch workspaces |
