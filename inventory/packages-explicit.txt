@@ -6,7 +6,6 @@ bluez
 bluez-utils
 brightnessctl
 cliphist
-discord
 dos2unix
 dosfstools
 efibootmgr
