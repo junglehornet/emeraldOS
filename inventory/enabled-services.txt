@@ -10,3 +10,4 @@ systemd-timesyncd.service          enabled enabled
 systemd-userdbd.socket             enabled enabled
 remote-fs.target                   enabled enabled
 fstrim.timer                       enabled disabled
+udisks2.service                    enabled enabled
