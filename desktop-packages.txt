@@ -37,8 +37,6 @@ lib32-vulkan-intel
 lib32-vulkan-radeon
 
 # Login and authentication
-# greetd
-# greetd-tuigreet
 sddm
 polkit
 hyprpolkitagent
@@ -98,6 +96,8 @@ dos2unix
 tree
 btop
 fzf
+zip
+unzip
 
 # Appearance
 noto-fonts
